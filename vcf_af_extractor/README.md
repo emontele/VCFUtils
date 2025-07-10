@@ -1,4 +1,4 @@
-### 1. `vcf-af-extractor`
+### `vcf-af-extractor`
 
 A high-performance program to extract Allele Frequency (AF) data from a VCF file's INFO field.
 
