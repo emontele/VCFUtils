@@ -31,22 +31,23 @@ The tools in this repository are built from source using the provided `Makefile`
 Ensure you have the necessary build tools and libraries installed on your system. These are required to compile `htslib` and the tools in this repository.
 
 **On Debian/Ubuntu:**
-`sudo apt-get update`
-`sudo apt-get install build-essential git gcc make zlib1g-dev libbz2-dev liblzma-dev libcurl4-openssl-dev libssl-dev`
-
+```
+sudo apt-get update
+sudo apt-get install build-essential git gcc make zlib1g-dev libbz2-dev liblzma-dev libcurl4-openssl-dev libssl-dev
+```
 **On RedHat/CentOS/Fedora:**
-`sudo yum groupinstall "Development Tools"`
-`sudo yum install git gcc make zlib-devel bzip2-devel xz-devel libcurl-devel openssl-devel`
+```
+sudo yum groupinstall "Development Tools"
+sudo yum install git gcc make zlib-devel bzip2-devel xz-devel libcurl-devel openssl-devel
+```
 
 ### Step 2: Download the Project and HTSlib
 
 1.  **Clone this repository:**
     ```
-    git clone https://github.com/your-username/VCF-Utils.git
+    git clone https://github.com/emontele/VCF-Utils.git
     cd VCF-Utils
     ```
-    *(Remember to replace `your-username` with your actual GitHub username)*
-
 2.  **Download and compile HTSlib:** The tools require `htslib`. You must compile it from source to generate the static library (`libhts.a`) needed for the build.
     ```
     # Download and extract the latest htslib release
@@ -78,10 +79,12 @@ Before compiling, you must tell the `Makefile` where to find your compiled `htsl
 ### Step 4: Compile the Tool
 
 With the `Makefile` correctly configured, simply run `make` from the root of the project directory:
-`make`
+```
+make
+```
 
 A standalone executable named `vcf_af_extractor` will be created. You can verify that it is statically linked and does not depend on a shared `libhts.so` file by running `ldd`:
-`ldd ./vcf_af_extractor`
+```ldd ./vcf_af_extractor```
 On Linux, this should output "not a dynamic executable" or show only system libraries.
 
 
