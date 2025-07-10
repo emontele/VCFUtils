@@ -91,4 +91,4 @@ On Linux, this should output "not a dynamic executable" or show only system libr
 ### Cleaning Up
 
 To remove the compiled binary and any intermediate object files, run:
-`make clean`
+```make clean```
